@@ -1,13 +1,12 @@
 package com.example.myapp;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+
 
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import android.widget.EditText;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private Button button;
 
     public static final String EXTRA_TEXT = "com.example.myapp.EXTRA_TEXT";
@@ -27,12 +26,57 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        bottomNavigationView.setSelectedItemId(R.id.firstFragment);
 
-        NavController navController = Navigation.findNavController(this,  R.id.fragment);
 
-        NavigationUI.setupWithNavController(bottomNavigationView, navController);
 
     }
+    FirstFragment firstFragment = new FirstFragment();
+    SecondFragment secondFragment = new SecondFragment();
+    ThirdFragment thirdFragment = new ThirdFragment();
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, firstFragment).commit();
+                return true;
+
+            case R.id.games:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, secondFragment).commit();
+                return true;
+
+            case R.id.maps:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, thirdFragment).commit();
+                return true;
+        }
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void openSecondActivity() {
         EditText editTextTextPersonName = (EditText) findViewById(R.id.editTextTextPersonName);
         String text = editTextTextPersonName.getText().toString();
@@ -42,4 +86,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-}
+
+
+
+    }
