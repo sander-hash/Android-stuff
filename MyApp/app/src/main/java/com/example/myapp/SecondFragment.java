@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.snackbar.Snackbar;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SecondFragment#newInstance} factory method to
@@ -58,6 +60,9 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+//        View v = getActivity().findViewById(android.R.id.content);
+//        Snackbar.make(v, "U bent nu in games.", Snackbar.LENGTH_SHORT).show();
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false);
     }

@@ -1,22 +1,36 @@
 package com.example.myapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
-
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.android.material.snackbar.Snackbar;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link FirstFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class FirstFragment extends Fragment {
+    private CoordinatorLayout coordinatorLayout;
+
+
+
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -46,19 +60,31 @@ public class FirstFragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = getActivity().findViewById(android.R.id.content);
+        Snackbar.make(v, "U bent nu in home.", Snackbar.LENGTH_SHORT).show();
+
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_first, container, false);
+
+
     }
 }

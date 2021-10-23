@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
 
+
+
+
     }
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
