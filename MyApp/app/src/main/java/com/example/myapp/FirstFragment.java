@@ -2,12 +2,15 @@ package com.example.myapp;
 
 import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -22,11 +25,6 @@ public class FirstFragment extends Fragment {
     private CoordinatorLayout coordinatorLayout;
 
 
-
-
-
-
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
@@ -37,6 +35,7 @@ public class FirstFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button button;
 
     public FirstFragment() {
         // Required empty public constructor
@@ -73,18 +72,13 @@ public class FirstFragment extends Fragment {
 
 
         }
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = getActivity().findViewById(android.R.id.content);
-        Snackbar.make(v, "U bent nu in home.", Snackbar.LENGTH_SHORT).show();
-
-
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
-
-
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.activity_first, container, false);
+        button = (Button) rootView.findViewById(R.id.button);
+        return rootView;
     }
 }
