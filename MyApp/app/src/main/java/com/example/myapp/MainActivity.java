@@ -1,5 +1,6 @@
 package com.example.myapp;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -43,7 +44,19 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.firstFragment);
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new FirstFragment()).commit();
+
+
+
     }
+
+
+
+
+
+
+
+
 
 
     @Override
@@ -62,16 +75,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, thirdFragment).commit();
                 return true;
         }
-        return false;
+
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, firstFragment).commit();
+            return true;
 
     }
 
 
 
-    public void openFistActivity() {
-        Intent intent = new Intent(MainActivity.this, FirstActivity.class);
-        startActivity(intent);
-    }
+
 
 
 
