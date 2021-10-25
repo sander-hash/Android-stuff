@@ -68,9 +68,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
 
 
-
-
-
+    public void openFistActivity() {
+        Intent intent = new Intent(MainActivity.this, FirstActivity.class);
+        startActivity(intent);
+    }
 
 
 
