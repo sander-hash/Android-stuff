@@ -25,5 +25,6 @@ public class SecondActivity extends AppCompatActivity {
         String text = intent.getStringExtra(MainActivity.EXTRA_TEXT);
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         textView2.setText(text);
+
     }
 }

@@ -31,11 +31,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        FloatingActionButton fab = findViewById(R.id.bottomNavigationView);
-//        final View v = findViewById(android.R.id.content);
-//        Snackbar snackbar = Snackbar.make(v, "Welkom terug gebruiker!", Snackbar.LENGTH_LONG);
-//        snackbar.setAnchorView(fab);
-//        snackbar.show();
+
+
 
 
         setContentView(R.layout.activity_main);
@@ -46,7 +43,10 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new FirstFragment()).commit();
 
-
+        View v = findViewById(R.id.coordinatorLayout);
+        Snackbar snackbar = Snackbar.make(v, "Welkom terug gebruiker!", Snackbar.LENGTH_LONG);
+        snackbar.setAnchorView(bottomNavigationView);
+        snackbar.show();
 
     }
 
