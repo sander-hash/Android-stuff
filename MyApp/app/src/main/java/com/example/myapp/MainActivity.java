@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -44,9 +46,27 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, new FirstFragment()).commit();
 
         View v = findViewById(R.id.coordinatorLayout);
-        Snackbar snackbar = Snackbar.make(v, "Welkom terug gebruiker!", Snackbar.LENGTH_LONG);
-        snackbar.setAnchorView(bottomNavigationView);
-        snackbar.show();
+
+        ViewTreeObserver vto = v.getViewTreeObserver();
+        vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    v.getViewTreeObserver()
+                            .removeOnGlobalLayoutListener(this);
+                }else{
+                    v.getViewTreeObserver()
+                            .removeOnGlobalLayoutListener(this);
+                }
+                Snackbar snackbar = Snackbar.make(v, "Welkom terug gebruiker!", Snackbar.LENGTH_LONG);
+                snackbar.setAnchorView(bottomNavigationView);
+                snackbar.show();
+
+            }
+        });
+
+
+
 
     }
 
