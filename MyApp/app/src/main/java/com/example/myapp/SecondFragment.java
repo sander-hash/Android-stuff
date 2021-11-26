@@ -74,9 +74,8 @@ public class SecondFragment extends Fragment {
 
 
 
-
         // Inflate the layout for this fragment
 
-    }
+}
 
 
