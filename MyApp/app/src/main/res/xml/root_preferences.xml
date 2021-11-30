@@ -3,14 +3,15 @@
     <PreferenceCategory app:title="User info">
 
         <EditTextPreference
+
             app:key="signature"
             app:title="@string/set_name"
             app:useSimpleSummaryProvider="true" />
 
         <ListPreference
             app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
+            app:entries="@array/country_names"
+            app:entryValues="@array/country_values"
             app:key="reply"
             app:title="@string/land"
             app:useSimpleSummaryProvider="true" />

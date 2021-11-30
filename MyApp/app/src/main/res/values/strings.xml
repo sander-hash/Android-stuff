@@ -19,7 +19,8 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="nederland_entries">Nederland</string>
     <string name="land">Land kiezen</string>
-    <string name="set_name">Naam</string>
+    <string name="name">Sander</string>
+    <string name="set_name">Stel hier u naam in (Heeft restart nodig om te zien)</string>
+
 </resources>
