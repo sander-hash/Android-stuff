@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         int w = 0;
         while (w < 5) {
             w++;
-            // Hier zou je het kunnen uitprinten met System.out.println(w);
+            // Hier zou je bijvoorbeeld de nummers kunnen uitprinten met System.out.println(w);
         }
     }
 
@@ -168,15 +168,15 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             // Hier zou je het kunnen uitprinten met System.out.println(f);
         }
     }
-    public void openSecondActivity() {
+//    public void openSecondActivity() {
 //        EditText editTextTextPersonName = (EditText) findViewById(R.id.editTextTextPersonName);
 //        String text = editTextTextPersonName.getText().toString();
 //        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 //        intent.putExtra(EXTRA_TEXT, text);
 //
 //        startActivity(intent);
-
-    }
+//
+//    }
 
 
 
