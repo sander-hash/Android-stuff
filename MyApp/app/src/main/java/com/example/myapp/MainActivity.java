@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,6 +27,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -137,20 +140,34 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
     }
 
+    public class array {
 
 
+        public void main(String[] args)
+        {
 
+            ArrayList<String> array = new ArrayList<String>();
+            EditText editTextArray = (EditText) findViewById(R.id.editText);
+            String editText = editTextArray.getText().toString();
+            array.add(editText);
 
+            // je zou nu de array kunnen printen met System.out.print(array);
+        }
+    }
 
+    public void whileLoop(){
+        int w = 0;
+        while (w < 5) {
+            w++;
+            // Hier zou je het kunnen uitprinten met System.out.println(w);
+        }
+    }
 
-
-
-
-
-
-
-
-
+    public void forLoop(){
+        for (int f = 0; f < 5; f++) {
+            // Hier zou je het kunnen uitprinten met System.out.println(f);
+        }
+    }
     public void openSecondActivity() {
 //        EditText editTextTextPersonName = (EditText) findViewById(R.id.editTextTextPersonName);
 //        String text = editTextTextPersonName.getText().toString();
